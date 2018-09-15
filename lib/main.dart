@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'screens/book_list_screen/book_list_screen.dart';
+import 'package:book_penguin/screens/add_new_book_screen/add_new_book_screen.dart';
+
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -19,7 +22,11 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: new BookListScreen(),
+      routes: <String, WidgetBuilder> { //5
+        '/BookListScreen': (BuildContext context) => new BookListScreen(), //6
+        '/AddNewBookScreen' : (BuildContext context) => new AddNewBookScreen() //7
+      }
     );
   }
 }
