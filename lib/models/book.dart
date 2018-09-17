@@ -12,6 +12,8 @@ class Book {
   final String infoLink;
   final String canonicalVolumeLink;
 
+  int readingStatus = 0;
+
   Book({
     this.title,
     this.subtitle,
